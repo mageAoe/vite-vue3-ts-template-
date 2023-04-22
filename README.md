@@ -75,5 +75,14 @@ module.exports = {
 }
 ```
 
+## 提交
 
 > commit-msg": "node scripts/verify-commit-msg.js"
+
+```js
+"config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+```
