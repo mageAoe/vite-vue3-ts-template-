@@ -54,3 +54,26 @@ declare module '*.vue' {
   export default componentOptions
 }
 ```
+
+## Component name "Login" should always be multi-word.eslint
+
+> .eslintrc.js中配置:
+
+```json
+rules: {
+        'vue/multi-word-component-names': 0,
+      },
+```
+
+or
+
+> vue.config.js 文件中加一行
+
+```js
+module.exports = { 
+    lintOnSave:false, 
+}
+```
+
+
+> commit-msg": "node scripts/verify-commit-msg.js"

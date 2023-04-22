@@ -1,10 +1,12 @@
-import chalk from "chalk";
-import fs from "fs";
-const msgPath = process.env.GIT_PARAMS;
-const msg = fs.readFileSync(msgPath, "utf-8").trim();
+import chalk from "chalk"
+import fs from "fs"
+const msgPath = process.env.GIT_PARAMS
+// const msgPath = "src"
+// console.log(fs.readFileSync)
+const msg = fs.readFileSync(msgPath, "utf-8").trim()
 
 const commitRE =
-  /^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types|build)(\(.+\))?: .{1,50}/;
+  /^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types|build)(\(.+\))?: .{1,50}/
 
 if (!commitRE.test(msg)) {
   // eslint-disable-next-line no-console
@@ -25,6 +27,6 @@ if (!commitRE.test(msg)) {
           `npm run commit`
         )} to interactively generate a commit message.\n`
       )
-  );
-  process.exit(1);
+  )
+  process.exit(1)
 }
