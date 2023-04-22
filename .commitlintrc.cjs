@@ -7,18 +7,24 @@ module.exports = {
   prompt: {
     alias: { fd: 'docs: fix typos' },
     messages: {
-      type: 'Select the type of change that you\'re committing:',
-      scope: 'Denote the SCOPE of this change (optional):',
-      customScope: 'Denote the SCOPE of this change:',
-      subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
-      body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
-      breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
-      footerPrefixesSelect: 'Select the ISSUES type of changeList by this change (optional):',
-      customFooterPrefix: 'Input ISSUES prefix:',
-      footer: 'List any ISSUES by this change. E.g.: #31, #34:\n',
-      generatingByAI: 'Generating your AI commit subject...',
-      generatedSelectByAI: 'Select suitable subject by AI generated:',
-      confirmCommit: 'Are you sure you want to proceed with the commit above?'
+      // type: 'Select the type of change that you\'re committing:',
+      // scope: 'Denote the SCOPE of this change (optional):',
+      // customScope: 'Denote the SCOPE of this change:',
+      // subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
+      // body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
+      // breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
+      // footerPrefixesSelect: 'Select the ISSUES type of changeList by this change (optional):',
+      // customFooterPrefix: 'Input ISSUES prefix:',
+      // footer: 'List any ISSUES by this change. E.g.: #31, #34:\n',
+      // generatingByAI: 'Generating your AI commit subject...',
+      // generatedSelectByAI: 'Select suitable subject by AI generated:',
+      // confirmCommit: 'Are you sure you want to proceed with the commit above?'
+      type: '请选择提交的类型：',
+      customScope: '情输入修改的范围(可选)',
+      subject: '请简要描述提交(必填)',
+      body: '请输入详细描述(可选)',
+      footer: '请输入要关闭的issus(可选)',
+      confirmCommit: '确认要使用以上信息提交？(y/n)'
     },
     types: [
       // { value: 'feat', name: 'feat:     A new feature', emoji: ':sparkles:' },
