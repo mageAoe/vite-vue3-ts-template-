@@ -4,8 +4,53 @@
 
 > npm uninstall eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescr -D
 
-> https://juejin.cn/post/7177324554056892476
 
-> https://juejin.cn/post/7213575951116058685
 
-> https://juejin.cn/post/7191855455596412987#heading-26
+## 解决 eslint 和 prettier 冲突
+
+> 解决 ESLint 中的样式规范和 prettier 中样式规范的冲突，以 prettier 的样式规范为准，使 ESLint 中的样式规范自动失效
+
+> npm i -D eslint-config-prettier
+
+## npm run lint 报错
+
+> .eslintrc.js 重命名为 .eslintrc.cjs
+
+## .npmrc
+
+> .npmrc文件，指定项目依赖的来源（yarn 会读取.npmrc的配置文件
+
+## ESlint不要分号，Prettier却强制分号结尾的问题，解决如下（这里统一不要分号）
+> package.json
+
+```js
+"prettier": {
+   "semi": false
+}
+```
+## vite 常用插件
+> 可以查看官方文档：vitejs.cn/plugins/
+
+@vitejs/plugin-vue 提供 Vue 3 单文件组件支持
+@vitejs/plugin-vue-jsx 提供 Vue 3 JSX 支持（通过 专用的 Babel 转换插件）
+@vitejs/plugin-legacy 为打包后的文件提供传统浏览器兼容性支持
+unplugin-vue-components 组件的按需自动导入
+vite-plugin-compression 使用 gzip 或者 brotli 来压缩资源
+
+## 非常推荐使用的 hooks 库
+
+> 因为vue3.x和react hooks真的很像，所以就称为 hooks
+
+> VueUse：vueuse.org/
+
+## Cannot find module 'xxx.vue' or its corresponding type declarations.ts(2307)
+
+> 在项目根目录或 src 文件夹下创建一个名为 shims-vue.d.ts 的文件，并写入以下内容
+
+```js
+declare module '*.vue' {
+  import { ComponentOptions } from 'vue'
+  const componentOptions: ComponentOptions
+  export default componentOptions
+}
+```
